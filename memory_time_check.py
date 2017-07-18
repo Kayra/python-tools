@@ -12,13 +12,16 @@ def function_two():
 
 print('Memory BEFORE: {}Mb'.format(mem_profile.memory_usage_resource()))
 
-timer_start = time.clock()
+timer_start_one = time.clock()
 function_one()
-timer_end = time.clock()
+timer_end_one = time.clock()
 
-# timer_start = time.clock()
-# function_two()
-# timer_end = time.clock()
+timer_start_two = time.clock()
+function_two()
+timer_end_two = time.clock()
 
 print('Memory AFTER: {}Mb'.format(mem_profile.memory_usage_resource()))
-print('Took {} seconds'.format(timer_end - timer_start))
+
+
+print('The first function took {} seconds'.format(timer_end_one - timer_start_one))
+print('The second function took {} seconds'.format(timer_end_two - timer_start_two))
