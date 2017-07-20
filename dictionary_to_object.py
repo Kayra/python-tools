@@ -1,8 +1,10 @@
 
+
 # Just for better way to reference
-class objectview(object):
-    def __init__(self, d):
-        self.__dict__ = d
+class ObjectFromDictionary(object):
+    def __init__(self, dictionary):
+        self.__dict__ = dictionary
+
 
 # With dict methods
 class objdict(dict):
@@ -20,4 +22,3 @@ class objdict(dict):
             del self[name]
         else:
             raise AttributeError("No such attribute: " + name)
-
