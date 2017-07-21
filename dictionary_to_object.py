@@ -1,24 +1,25 @@
 
 
 # Just for better way to reference
-class ObjectFromDictionary(object):
+class ObjectFromDictionary:
     def __init__(self, dictionary):
         self.__dict__ = dictionary
 
 
 # With dict methods
 class objdict(dict):
-    def __getattr__(self, name):
-        if name in self:
-            return self[name]
-        else:
-            raise AttributeError("No such attribute: " + name)
 
-    def __setattr__(self, name, value):
-        self[name] = value
-
-    def __delattr__(self, name):
-        if name in self:
-            del self[name]
+    def __getattr__(self, attribute_name):
+        if attribute_name in self:
+            return self[attribute_name]
         else:
-            raise AttributeError("No such attribute: " + name)
+            raise AttributeError("No such attribute: " + attribute_name)
+
+    def __setattr__(self, attribute_name, value):
+        self[attribute_name] = value
+
+    def __delattr__(self, attribute_name):
+        if attribute_name in self:
+            del self[attribute_name]
+        else:
+            raise AttributeError("No such attribute: " + attribute_name)
