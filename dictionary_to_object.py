@@ -12,7 +12,6 @@ class DictionaryObjectFromDictionary(dict):
     """
     Transform a dictionary into an object but keep dictionary attribute methods.
     """
-
     def __getattr__(self, attribute_name):
         if attribute_name in self:
             return self[attribute_name]
