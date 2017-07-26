@@ -44,3 +44,17 @@ def memory_profile(function_one, function_two):
 
     print('The first function used {}mb'.format(memory_end_one - memory_start_one))
     print('The second function used {}mb'.format(memory_end_two - memory_start_two))
+
+
+def time_profile(function_one, function_two):
+
+    timer_start_one = time.clock()
+    function_one()
+    timer_end_one = time.clock()
+
+    timer_start_two = time.clock()
+    function_two()
+    timer_end_two = time.clock()
+
+    print('The first function took {} seconds'.format(timer_end_one - timer_start_one))
+    print('The second function took {} seconds'.format(timer_end_two - timer_start_two))
